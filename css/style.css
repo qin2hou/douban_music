@@ -1,0 +1,195 @@
+/* 全局样式 */
+* {
+	padding: 0;
+	margin: 0;
+}
+ul {
+	list-style: none;
+}
+li {
+	display: inline-block;
+}
+a {
+	text-decoration: none;
+	color: #d5d5d5;
+}
+
+
+/*顶栏样式*/
+.top {
+	position: relative;
+	height: 28px;
+	background-color: #545652;
+}
+.nav, .login {
+	display: inline-block;
+	position: absolute;
+	font-size: 11px;
+	line-height: 28px;
+}
+.nav li, .login li {
+	margin: 0 12px;
+}
+.nav li a, .login li a{
+	color: #d5d5d5;
+}
+.nav li a:hover, .login li a:hover {
+	color: white;
+}
+.nav {
+	left: 0;
+}
+.login {
+	right: 12px;
+}
+
+.start {
+	position: relative;
+	height: 115px;
+	background-color: #f0f3ef;
+}
+.start .entrance {
+	height: 75px;
+	border-bottom: 1px solid #e3e9e2;
+	box-sizing: border-box;
+}
+.start .entrance .container {
+	position: relative;
+	width: 1040px;
+	height: 100%;
+	margin: 0 auto;
+}
+.start .entrance .container .recommend {
+	position: absolute;
+	top: 26px;
+	left: 980px;
+}
+.start .entrance .logo, .start .entrance .search {
+	display: inline-block;
+	position: relative;
+}
+.start .entrance .logo img {
+	margin-top: 20px;
+	width: 115px;
+	height: 27px;
+}
+.start .entrance .search {
+	position: absolute;
+	margin-left: 42px;
+	margin-top: 20px;
+}
+
+.start .entrance .search input{
+	position: relative;
+	width: 502px;
+	height: 32px;
+	border: 0;
+	outline: none; /*输入框选中时的边框*/
+	text-indent: 14px; /* 输入框缩进 */
+	border-radius: 2px;
+	box-shadow: 1px 1px #d1d1d1;
+}
+/*设置 placeholder*/
+input::-webkit-input-placeholder{
+	font-size: 12px;
+	color: #757575;
+}
+input::-moz-placeholder {
+	font-size: 12px;
+	color: #757575;
+}
+input::-ms-input-placeholder {
+	font-size: 12px;
+	color: #757575;
+}
+.start .entrance .search .search-btn {
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	width: 37px;
+	height: 32px;
+	line-height: 32px;
+	background-color: #a1a9a0;
+	border-radius: 0 2px 2px 0;
+	text-align: center;
+	vertical-align: middle;
+}
+.start .common-words {
+	position: relative;
+	width: 1040px;
+	height: 40px;
+	margin: 0 auto;
+	line-height: 40px;
+	vertical-align: middle;
+}
+.start .common-words ul li {
+	margin-right: 29px;
+}
+.start .common-words ul li a {
+	font-size: 12px;
+	color: #555d53;
+}
+.start .common-words ul li a:hover {
+	color: white;
+	background-color: #545652;;
+}
+
+
+/*主要内容区*/
+.container {
+	position: relative;
+	width: 1040px;
+	margin: 0 auto;
+}
+.container .main {
+	width: 675px;
+}
+.container .main .banner {
+	position: relative;
+	margin-top: 40px;
+	width: 675px;
+	height: 250px;
+	overflow: hidden;
+}
+.container .main .banner img {
+	width: 675px;
+}
+.container .main .banner .controller .right{
+	position: absolute;
+	top: 100px;
+	right: 0;
+	width: 35px;
+	height: 51px;
+	background: url("../images/next.png");
+}
+.container .main .banner .controller .right:hover {
+	background: url("../images/next-hover.png");
+}
+.container .main .banner .controller .dots {
+	position: absolute;
+	left: 312px;
+	bottom: 13px;
+	font-size: 0;
+}
+.container .main .banner .controller .dots span {
+	display: inline-block;
+	width: 5px;
+	height: 5px;
+	margin-right: 10px;
+	border-radius: 50%;
+	background-color: #f8f9f9;
+	cursor: pointer;
+}
+.container .main .banner .controller .dots .current span {
+	background-color: #139d72;
+}
+.container .main .banner .controller .dots span:hover {
+	background-color: #139d72;
+}
+
+.container .side {
+	width: 300px;
+	margin-left: 65px;
+}
+
+
