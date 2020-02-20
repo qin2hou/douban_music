@@ -6,19 +6,24 @@
 ul {
 	list-style: none;
 }
-li {
-	display: inline-block;
-}
 a {
 	text-decoration: none;
 	color: #d5d5d5;
 }
-
+h3,p,span {
+	font-size: 12px;
+	font-weight: normal;
+}
 
 /*顶栏样式*/
+header {
+	width: 100%;
+}
 .top {
 	position: relative;
 	height: 28px;
+	width: 100%;
+	min-width: 1040px;
 	background-color: #545652;
 }
 .nav, .login {
@@ -27,7 +32,11 @@ a {
 	font-size: 11px;
 	line-height: 28px;
 }
+.nav {
+	left: 0;
+}
 .nav li, .login li {
+	display: inline-block;
 	margin: 0 12px;
 }
 .nav li a, .login li a{
@@ -36,9 +45,6 @@ a {
 .nav li a:hover, .login li a:hover {
 	color: white;
 }
-.nav {
-	left: 0;
-}
 .login {
 	right: 12px;
 }
@@ -46,6 +52,7 @@ a {
 .start {
 	position: relative;
 	height: 115px;
+	width: 100%;
 	background-color: #f0f3ef;
 }
 .start .entrance {
@@ -123,6 +130,7 @@ input::-ms-input-placeholder {
 	vertical-align: middle;
 }
 .start .common-words ul li {
+	display: inline-block;
 	margin-right: 29px;
 }
 .start .common-words ul li a {
@@ -144,15 +152,17 @@ input::-ms-input-placeholder {
 .container .main {
 	width: 675px;
 }
+/* banner */
 .container .main .banner {
 	position: relative;
 	margin-top: 40px;
-	width: 675px;
 	height: 250px;
+	font-size: 0;
 	overflow: hidden;
 }
 .container .main .banner img {
 	width: 675px;
+	height: 250px;
 }
 .container .main .banner .controller .right{
 	position: absolute;
@@ -169,7 +179,6 @@ input::-ms-input-placeholder {
 	position: absolute;
 	left: 312px;
 	bottom: 13px;
-	font-size: 0;
 }
 .container .main .banner .controller .dots span {
 	display: inline-block;
@@ -180,11 +189,328 @@ input::-ms-input-placeholder {
 	background-color: #f8f9f9;
 	cursor: pointer;
 }
+.container .main .banner .controller .dots span:hover,
 .container .main .banner .controller .dots .current span {
 	background-color: #139d72;
 }
-.container .main .banner .controller .dots span:hover {
-	background-color: #139d72;
+
+/*流行音乐人栏目*/
+
+/*通用栏目*/
+.container .main .column {
+	margin-top: 44px;
+	width: 675px;
+}
+.container .main .column .header{
+	position: relative;
+	padding: 8px 0;
+	color: black;
+	border-bottom: 2px solid #02a682;
+}
+.container .main .column .header .title {
+	font-size: 18px;
+	display: inline-block;
+}
+.container .main .column .header .subtitle {
+	font-size: 12px;
+	color: #999;
+}
+.container .main .column .header a.subtitle:hover {
+	font-weight: bold;
+	color: #138a64;
+	text-decoration: underline;
+}
+.container .main .column .header a.current {
+	font-weight: bold;
+	color: #138a64;
+}
+.container .main .column .header a.more{
+	position: absolute;
+	right: 0px;
+	bottom: 8px;
+}
+.container .main .column .header a.more:hover {
+	color: white;
+	font-weight: normal;
+	background-color: #999;
+	text-decoration: none;
+}
+.container .main .column .list {
+	/*此处设置font-size为零后，所有子节点的大小都要重新设置*/
+	font-size: 0px;
+	box-sizing: border-box;
+}
+.container .main .column .list li.item {
+	/*此处给li加上累，避免子节点中出现li时样式也被修改*/
+	display: inline-block;
+}
+.container .main .column .list li a.photo {
+	display: inline-block;
+	width: 135px;
+	height: 135px;
+	background-color: white;
+	overflow: hidden;
+}
+.container .main .column .list li p.title,
+.container .main .column .list li p.title span {
+	font-size: 13px;
+	line-height: 13px;
+}
+.container .main .column .list li p.subtitle,
+.container .main .column .list li p.subtitle span {
+	font-size: 12px;
+	line-height: 12px;
+}
+.container .main .column .list li p.title {
+	margin-top: 15px;
+}
+.container .main .column .list li p.title a {
+	color: #138a64;
+}
+.container .main .column .list li p.title a:hover {
+	color: white;
+	background-color: #138a64;
+}
+.container .main .column .list li p.subtitle {
+	margin-top: 10px;
+	margin-bottom: 8px;
+	color: #999;
+}
+
+
+/*本周流行音乐人*/
+.container .main .latest-musician {
+	/*36-8*/
+	margin-top: 28px;
+}
+.container .main .latest-musician .list {
+	height: 435px;
+	padding-left: 29px;
+	background-color: #f5f7f8;
+}
+.container .main .latest-musician .list li{
+	margin-top: 14px;
+	margin-right: 23px;
+	text-align: center;
+}
+.container .main .latest-musician .list li a.photo {
+	position: relative;
+	border: 1px solid #dfdcdc;
+}
+.container .main .latest-musician .list li a.photo img {
+	margin: 5px;
+	width: 125px;
+	height: 125px;
+}
+.container .main .latest-musician .list li a.photo .hidden {
+	display: none;
+	position: absolute;
+	top: 0;
+	margin: 5px;
+	width: 125px;
+	height: 125px;
+	color: rgba(255, 253, 248, 0.7);
+	font-size: 72px;
+	line-height: 125px;
+	vertical-align: middle;
+	background-color: #2c2a24;
+	opacity: 0.7;
+}
+.container .main .latest-musician .list li a.photo span.play-btn {
+	position: absolute;
+	right: 15px;
+	bottom: 15px;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: #2c2a24;
+	opacity: 0.9;
+}
+.container .main .latest-musician .list li a.photo span.play {
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+	/*绘制三角形*/
+	width: 8px;
+	height: 10px;
+	border-width: 5px 0 5px 8px;
+	border-style: solid;
+	border-color: transparent transparent transparent #fffdf8;
+	box-sizing: border-box;
+	opacity: 0.9;
+}
+.container .main .latest-musician .list li a.photo:hover .hidden {
+	display: block;
+}
+.container .main .latest-musician .list li a.photo:hover span.play-btn {
+	background-color: #fffdf8;
+}
+.container .main .latest-musician .list li a.photo:hover span.play {
+	border-color: transparent transparent transparent #2c2a24;
+}
+.container .main .column .list li p.title a span.bell{
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	/*background 语法*/
+	background-image: url("../images/bell.png");
+	background-repeat: no-repeat;
+}
+
+
+
+
+
+
+
+/*新碟榜*/
+.container .main .new-disc {
+	/*44-8*/
+	margin-top: 36px;
+}
+.container .main .new-disc .header .title {
+	margin-right: 24px;
+}
+.container .main .new-disc .list {
+	height: 463px;
+	padding-left: 29px;
+	background-color: #f5f7f8;
+}
+.container .main .new-disc .list li{
+	margin-top: 15px;
+	margin-right: 26px;
+	/*text-align: left;*/
+}
+.container .main .new-disc .list li a.photo img {
+	width: 135px;
+	height: 135px;
+}
+.container .main .new-disc .list li p.title {
+	margin-top: 14px;
+}
+.container .main .new-disc .list li p.subtitle {
+	margin-top: 12px;
+}
+.container .main .new-disc .list li p.stars {
+	margin-top: -1px;
+	margin-bottom: 0px;
+	font-size: 10px;
+	line-height: 10px;
+	color: #ffac2d;
+}
+.container .main .new-disc .list li p.stars span {
+	font-size: 10px;
+	line-height: 10px;
+}
+.container .main .new-disc .list li p.stars span.star {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	/*background 语法*/
+	background-repeat: no-repeat;
+}
+.container .main .new-disc .list li p.stars span.full {
+	background-image: url("../images/star_full.png");
+}
+.container .main .new-disc .list li p.stars span.half {
+	background-image: url("../images/star_half.png");
+}
+.container .main .new-disc .list li p.stars span.empty {
+	background-image: url("../images/star_empty.png");
+}
+.container .main .new-disc .list li p.stars span.score {
+	margin-left: 4px;
+	font-size: 10px;
+	line-height: 10px;
+}
+
+
+/*近期热门歌单*/
+.container .main .latest-songlist {
+	/*44-8*/
+	margin-top: 36px;
+}
+.container .main .latest-songlist .header .title {
+	margin-right: 24px;
+}
+.container .main .latest-songlist ul.list {
+	padding-bottom: 15px;
+	background-color: #f5f7f8;
+}
+.container .main .latest-songlist .list li.songslist{
+	position: relative;
+	padding: 14px;
+	width: 315px;
+	height: 166px;
+	margin: 15px 0 0 15px;
+	box-sizing: border-box;
+	background-color: white;
+	border: 1px solid #dfdcdc;
+	overflow: hidden;
+}
+.container .main .latest-songlist .list li .cover img {
+	position: absolute;
+ 	width: 41px;
+	height: 41px;
+}
+.container .main .latest-songlist .list li .hidden {
+	display: none;
+}
+.container .main .latest-songlist .list li .hidden .play-btn{
+	display: block;
+	position: absolute;
+ 	width: 41px;
+	height: 41px;
+	background-color: #666;
+	opacity: 0.8;
+}
+.container .main .latest-songlist .list li .hidden .play {
+	display: block;
+	position: absolute;
+	left: 30px;
+	top: 29px;
+ 	width: 10px;
+	height: 10px;
+	border-color: transparent transparent transparent #fffdf8;
+	border-style: solid;
+	border-width: 5px 0px 5px 10px;
+	/*绘制三角形，注意设置box-sizing*/
+	box-sizing: border-box;
+}
+.container .main .latest-songlist .list li:hover .hidden {
+	display: block;
+}
+.container .main .latest-songlist .list li p.title,
+.container .main .latest-songlist .list li p.subtitle,
+.container .main .latest-songlist .list li ul.songs {
+	/*41+8*/
+	margin-left: 49px;
+}
+.container .main .latest-songlist .list li p.title {
+	margin-top: 2px;
+}
+.container .main .latest-songlist .list li p.title span{
+	color: #999;
+}
+.container .main .latest-songlist .list li p.subtitle {
+	margin-top: 16px;
+}
+.container .main .latest-songlist .list li p.subtitle .author {
+	color: #666666;
+	margin-right: 3px;
+}
+.container .main .latest-songlist .list li p.subtitle .author:hover {
+	color: white;
+	background-color: #666666;
+}
+.container .main .latest-songlist .list li ul.songs {
+	margin-top: 18px;
+}
+.container .main .latest-songlist .list li ul.songs li{
+	margin-top: 9px;
+	font-size: 12px;
+	line-height: 12px;
+	color: #666666;
 }
 
 .container .side {
