@@ -1,4 +1,6 @@
-douban music demo
+Douban Music Demo V1
+
+by qin2hou@qq.com
 
 0219 增加顶栏
 
@@ -7,3 +9,7 @@ douban music demo
 0220 增加主栏
 
 ![Image text](https://raw.githubusercontent.com/qin2hou/images_folder/master/douban_music_backup_0219.png)
+
+0221 增加侧栏和低栏，完成第一版
+
+![Image text](https://github.com/qin2hou/images_folder/raw/master/douban_music_backup_0221.png)

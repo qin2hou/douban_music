@@ -142,6 +142,81 @@ input::-ms-input-placeholder {
 	background-color: #545652;;
 }
 
+/*
+  通用模块提取
+*/
+/*大标题*/
+.container .column .header{
+	position: relative;
+	padding: 8px 0;
+	color: black;
+}
+.container .column .header .title {
+	display: inline-block;
+}
+/*小标题*/
+.container .column .subtitle {
+	font-size: 12px;
+	line-height: 12px;
+	color: #999;
+}
+.container .column a.subtitle:hover {
+	font-weight: bold;
+	color: #138a64;
+	text-decoration: underline;
+}
+.container .column a.current {
+	font-weight: bold;
+	color: #138a64;
+}
+/*更多*/
+.container .column .header a.more{
+	position: absolute;
+	right: 0;
+	bottom: 8px;
+	cursor: pointer;
+}
+.container .column .header a.more:hover {
+	color: white;
+	font-weight: normal;
+	background-color: #999;
+	text-decoration: none;
+}
+/*
+	通用模块 play按钮
+ */
+
+span.play {
+	position: absolute;
+	border-style: solid;
+	border-color: transparent transparent transparent #fffdf8;
+	/*绘制三角形，注意设置box-sizing*/
+	box-sizing: border-box;
+	opacity: 0.9;
+}
+
+/*通用模块
+	按钮
+*/
+input.btn {
+	font-size: 16px;
+	color: white;
+	border: 1px solid #138a64;
+	background-color: #139d72;
+	border-radius: 2px;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+input.btn:hover {
+	background-color: #3cb08c;
+}
+
+
+
+
+
+
+
 
 /*主要内容区*/
 .container {
@@ -149,7 +224,9 @@ input::-ms-input-placeholder {
 	width: 1040px;
 	margin: 0 auto;
 }
+/*主栏*/
 .container .main {
+	position: absolute;
 	width: 675px;
 }
 /* banner */
@@ -194,47 +271,20 @@ input::-ms-input-placeholder {
 	background-color: #139d72;
 }
 
-/*流行音乐人栏目*/
 
-/*通用栏目*/
+/*主栏通用栏目*/
 .container .main .column {
-	margin-top: 44px;
 	width: 675px;
 }
-.container .main .column .header{
-	position: relative;
-	padding: 8px 0;
-	color: black;
+.container .main .column .header {
 	border-bottom: 2px solid #02a682;
 }
 .container .main .column .header .title {
 	font-size: 18px;
-	display: inline-block;
+	line-height: 18px;
 }
-.container .main .column .header .subtitle {
-	font-size: 12px;
-	color: #999;
-}
-.container .main .column .header a.subtitle:hover {
-	font-weight: bold;
-	color: #138a64;
-	text-decoration: underline;
-}
-.container .main .column .header a.current {
-	font-weight: bold;
-	color: #138a64;
-}
-.container .main .column .header a.more{
-	position: absolute;
-	right: 0px;
-	bottom: 8px;
-}
-.container .main .column .header a.more:hover {
-	color: white;
-	font-weight: normal;
-	background-color: #999;
-	text-decoration: none;
-}
+
+
 .container .main .column .list {
 	/*此处设置font-size为零后，所有子节点的大小都要重新设置*/
 	font-size: 0px;
@@ -251,6 +301,7 @@ input::-ms-input-placeholder {
 	background-color: white;
 	overflow: hidden;
 }
+/* 大标题小标题模块 */
 .container .main .column .list li p.title,
 .container .main .column .list li p.title span {
 	font-size: 13px;
@@ -326,18 +377,15 @@ input::-ms-input-placeholder {
 	background-color: #2c2a24;
 	opacity: 0.9;
 }
+
+
 .container .main .latest-musician .list li a.photo span.play {
-	position: absolute;
 	right: 20px;
 	bottom: 20px;
 	/*绘制三角形*/
 	width: 8px;
 	height: 10px;
 	border-width: 5px 0 5px 8px;
-	border-style: solid;
-	border-color: transparent transparent transparent #fffdf8;
-	box-sizing: border-box;
-	opacity: 0.9;
 }
 .container .main .latest-musician .list li a.photo:hover .hidden {
 	display: block;
@@ -435,14 +483,18 @@ input::-ms-input-placeholder {
 }
 .container .main .latest-songlist ul.list {
 	padding-bottom: 15px;
+	width: 675px;
 	background-color: #f5f7f8;
+	overflow: hidden;
 }
 .container .main .latest-songlist .list li.songslist{
 	position: relative;
 	padding: 14px;
 	width: 315px;
 	height: 166px;
-	margin: 15px 0 0 15px;
+	/*margin: 15px 0 0 15px;*/
+	margin-top: 15px;
+	margin-left: 15px;
 	box-sizing: border-box;
 	background-color: white;
 	border: 1px solid #dfdcdc;
@@ -456,6 +508,9 @@ input::-ms-input-placeholder {
 .container .main .latest-songlist .list li .hidden {
 	display: none;
 }
+.container .main .latest-songlist .list li:hover .hidden {
+	display: block;
+}
 .container .main .latest-songlist .list li .hidden .play-btn{
 	display: block;
 	position: absolute;
@@ -465,20 +520,11 @@ input::-ms-input-placeholder {
 	opacity: 0.8;
 }
 .container .main .latest-songlist .list li .hidden .play {
-	display: block;
-	position: absolute;
 	left: 30px;
 	top: 29px;
  	width: 10px;
 	height: 10px;
-	border-color: transparent transparent transparent #fffdf8;
-	border-style: solid;
 	border-width: 5px 0px 5px 10px;
-	/*绘制三角形，注意设置box-sizing*/
-	box-sizing: border-box;
-}
-.container .main .latest-songlist .list li:hover .hidden {
-	display: block;
 }
 .container .main .latest-songlist .list li p.title,
 .container .main .latest-songlist .list li p.subtitle,
@@ -513,9 +559,437 @@ input::-ms-input-placeholder {
 	color: #666666;
 }
 
+
+/*侧栏*/
 .container .side {
+	position: absolute;
+	top: 0;
+	right: 0;
 	width: 300px;
-	margin-left: 65px;
+}
+.container .side .column {
+	width: 300px;
+}
+.container .side .column .header {
+	padding: 6px;
+	border-bottom: 1px solid #f8f6f6;
+}
+.container .side .column .header .title {
+	font-size: 14px;
+	line-height: 14px;
+}
+.container .side .column .header a.subtitle:hover {
+	color: white;
+	background-color: #666;
+	display: inline-block;
+}
+.container .side .column .header a.more{
+	right: 5px;
 }
 
 
+
+/*
+	公共模块
+	list
+ */
+.container .side .column .list li.item {
+	display: inline-block;
+	position: relative;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.container .side .column .list li.item .info p.title,
+.container .side .column .list li.item .info p.title span,
+.container .side .column .list li.item .info p.title a {
+	font-size: 14px;
+	line-height: 14px;
+	color: #138a64;
+}
+.container .side .column .list li.item .info p.subtitle,
+.container .side .column .list li.item .info p.subtitle span {
+	font-size: 12px;
+	line-height: 12px;
+	color: #999;
+}
+/* hover效果 */
+.container .side .column .list li.item .info p.title a.hover:hover span{
+	color: white;
+	background-color: #138a64;
+}
+
+
+
+
+
+/*加入我们*/
+.container .side .join-us {
+	margin-top: 40px;
+	font-size: 0;
+	text-align: center;
+}
+.container .side .join-us .item {
+	display: inline-block;
+	width: 98px;
+	height: 58px;
+	margin-right: 2px;
+	padding-top: 14px;
+	background-color: #f5f7f8;
+	box-sizing: border-box;
+}
+.container .side .join-us span.nums {
+	font-size: 14px;
+	line-height: 14px;
+	font-weight: bold;
+	color: #138a7b;
+}
+.container .side .join-us span.nums:hover {
+	color: white;
+	background-color: #138a7b;
+}
+.container .side .join-us span.types {
+	/*margin-top: 10px;*/
+	font-size: 15px;
+	line-height: 26px;
+	color: #666;
+}
+
+
+
+.container .side .join-us input {
+	width: 100%;
+	height: 40px;
+	margin-top: 2px;
+}
+
+
+/*音乐人分类*/
+.container .side .musician-categary {
+	/*40-8*/
+	margin-top: 32px;
+}
+.container .side .musician-categary .categary {
+	font-size: 0;
+	border-left: 1px solid #f8f6f6;
+}
+.container .side .musician-categary .categary li {
+	display: inline-block;
+	padding: 1px;
+	width: 149.5px;
+	height: 40px;
+	border-color: #f8f6f6;
+	border-style: solid;
+	border-width: 0 1px 1px 0;
+	box-sizing: border-box;
+}
+.container .side .musician-categary .categary li a {
+	display: block;
+	padding-left: 5px;
+	line-height: 37px;
+	font-size: 15px;
+	color: #138a64;
+}
+.container .side .musician-categary .categary li a:hover {
+	color: #138a64;
+	background-color: #f5f7f8;
+}
+
+/*本周单曲榜*/
+.container .side .billboard {
+	/*36-8*/
+	margin-top: 28px;
+}
+.container .side .billboard .header {
+	padding-bottom: 11px;
+}
+.container .side .billboard .header .play-btn{
+	position: absolute;
+	right: 0;
+	bottom: 5px;
+	padding-right: 10px;
+	width: 90px;
+	height: 25px;
+	font-size: 13px;
+	line-height: 25px;
+	text-align: right;
+}
+.container .side .billboard .header .play {
+	bottom: 11px;
+	right: 70px;
+ 	width: 12px;
+	height: 12px;
+	border-width: 6px 0px 6px 12px;
+}
+.container .side .billboard .categary {
+	text-indent: 5px;
+	/*14+13*/
+	padding-top: 14px;
+	line-height: 13px;
+}
+
+
+
+.container .side .billboard .list {
+	margin-top: 5px;
+}
+.container .side .billboard .list li.item {
+	width: 300px;
+	height: 60px;
+}
+.container .side .billboard .list li.item a,
+.container .side .billboard .list li.item a img,
+.container .side .billboard .list li.item a .play-btn,
+.container .side .billboard .list li.item a .play,
+.container .side .billboard .list li.item .info,
+.container .side .billboard .list li.item .order {
+	position: absolute;
+}
+.container .side .billboard .list li.item a {
+	width: 300px;
+	height: 60px;
+}
+.container .side .billboard .list li.item a:hover {
+	background-color: #f5f7f8;
+}
+.container .side .billboard .list li.item a img {
+	top: 6px;
+	left: 2px;
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+}
+.container .side .billboard .list li.item a:hover .play-btn {
+	top: 6px;
+	left: 2px;
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	background-color: #666;
+	/*background-color: red;*/
+	opacity: 0.8;
+}
+.container .side .billboard .list li.item a:hover .play {
+	left: 22px;
+	top: 25px;
+ 	width: 10px;
+	height: 10px;
+	border-width: 5px 0px 5px 10px;
+	border-left-color: white;
+}
+
+
+
+
+.container .side .billboard .list li.item .info {
+	left: 60px;
+}
+.container .side .billboard .list li.item .info p.title {
+	margin-top: 12px;
+}
+.container .side .billboard .list li.item .info p.subtitle {
+	margin-top: 8px;
+}
+.container .side .billboard .list li.item .order {
+	top: 17.5px;
+	right: 12px;
+	font-size: 25px;
+	font-weight: bold;
+	color: #e6e6e6;
+}
+
+
+
+/*豆瓣音乐250*/
+.container .side .top250 {
+	/*45-8*/
+	margin-top: 37px;
+}
+.container .side .top250 .list {
+	margin-top: 12px;
+	font-size: 0;
+}
+.container .side .top250 .list li.item {
+	font-size: 0;
+	width: 80px;
+	height: 100px;
+	text-align: center;
+	margin-right: 25px;
+	margin-bottom: 15px;
+}
+.container .side .top250 .list li.item:nth-child(3n) {
+	margin-right: 5px;
+}
+.container .side .top250 .list li.item a {
+	font-size: 0;
+}
+.container .side .top250 .list li.item img {
+	width: 80px;
+	height: 80px;
+}
+.container .side .top250 .list li.item .info p.title {
+	margin-top: 6px;
+}
+.container .side .top250 .list li.item .info p.title span{
+	/*此处span的line-height是14px，但是无效，需要设置下 display*/
+	display: inline-block;
+}
+
+
+
+
+/*下载*/
+
+/*仿写本周单曲榜中的list*/
+.container .side .download .list {
+	margin-top: 5px;
+	font-size: 0;
+}
+.container .side .download .list li.item {
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+.container .side .download .list li.app {
+	width: 300px;
+	height: 70px;
+	background-color: #f1f1f1;
+}
+.container .side .download .list li.app a,
+.container .side .download .list li.app a img,
+.container .side .download .list li.app .info,
+.container .side .download .list li.app .next {
+	position: absolute;
+}
+.container .side .download .list li.app a {
+	width: 300px;
+	height: 70px;
+}
+.container .side .download .list li.app a img {
+	top: 9px;
+	left: 10px;
+	width: 52px;
+	height: 52px;
+}
+.container .side .download .list li.app .info {
+	left: 72px;
+}
+.container .side .download .list li.app .info p.title {
+	margin-top: 18px;
+}
+.container .side .download .list li.app .info p.title span {
+	font-size: 16px;
+	font-weight: bold;
+	color: #204d92;
+}
+.container .side .download .list li.app .info p.subtitle {
+	margin-top: 4px;
+}
+.container .side .download .list li.app .info p.subtitle span{
+	font-size: 13px;
+	color: #4e4e4e;
+}
+.container .side .download .list li.app .next {
+	top: 30px;
+	right: 9px;
+	width: 6px;
+	height: 9px;
+	background: url("../images/next02.png") no-repeat;
+}
+.container .side .download .list li.mini_program {
+	margin-top: 15px;
+	padding-top: 13px;
+	width: 300px;
+	height: 275px;
+	border: 2px solid #f1f1f1;
+	text-align: center;
+}
+.container .side .download .list li.mini_program .info p.title {
+	margin-top: 10px;
+}
+.container .side .download .list li.mini_program .info p.title span {
+	font-size: 16px;
+	font-weight: bold;
+	color: #111;
+}
+.container .side .download .list li.mini_program .info p.subtitle {
+	margin-top: 4px;
+}
+.container .side .download .list li.mini_program .info p.subtitle span{
+	font-size: 12px;
+	color: #4e4e4e;
+}
+
+/*联系我们*/
+/*仿写豆瓣音乐250*/
+.container .side .contact-us {
+	/*21-8*/
+	margin-top: 14px;
+}
+.container .side .contact-us .header {
+	font-size: 0;
+}
+.container .side .column .header .subtitle {
+	margin-left: 7px;
+}
+.container .side .contact-us .list {
+	margin-top: 18px;
+	padding-left: 2.5px;
+	font-size: 0;
+}
+.container .side .contact-us .list li.item {
+	font-size: 0;
+	width: 75px;
+	height: 61px;
+	text-align: center;
+	margin-bottom: 10px;
+}
+.container .side .contact-us .list li.item:nth-child(3n) {
+	margin-right: 35px;
+}
+.container .side .contact-us .list li.item a {
+	font-size: 0;
+}
+.container .side .contact-us .list li.item img {
+	width: 40px;
+	height: 40px;
+}
+.container .side .contact-us .list li.item .info p.title {
+	margin-top: 6px;
+	font-size: 13px;
+}
+.container .side .contact-us .list li.item .info p.title span{
+	/*此处span的line-height是14px，但是无效，需要设置下 display*/
+	display: inline-block;
+	font-size: 13px;
+}
+
+/*底栏*/
+footer {
+	position: relative;
+	top: 2200px;
+	width: 1040px;
+	height: 34px;
+	margin: 0 auto;
+	line-height: 34px;
+	font-size: 12px;
+	box-sizing: border-box;
+	border-top: 1px dashed #ddd;
+}
+footer .copyright {
+	position: absolute;
+	color: #999;
+}
+footer .about-us {
+	position: absolute;
+	right: 0;
+}
+footer .about-us li{
+	display: inline-block;
+	/*color: #3377aa;*/
+}
+footer .about-us li a {
+	color: #3377aa;
+}
+footer .about-us li a:hover {
+	color: white;
+	background-color: #3377aa;
+}
